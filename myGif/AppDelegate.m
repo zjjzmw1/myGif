@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SJBMyCollectViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,6 +16,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    SJBMyCollectViewController *myCollectVC = [[SJBMyCollectViewController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:myCollectVC];
+    self.window.rootViewController = navi;
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    
     return YES;
 }
 
