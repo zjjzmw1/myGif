@@ -16,6 +16,7 @@
     BOOL _doubleTap;
     UIImageView *_imageView;
     MJPhotoLoadingView *_photoLoadingView;
+    
 }
 @end
 
@@ -103,7 +104,9 @@
         __unsafe_unretained MJPhotoLoadingView *loading = _photoLoadingView;
         [_imageView setImageWithURL:_photo.url placeholderImage:_photo.srcImageView.image options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSUInteger receivedSize, long long expectedSize) {
             if (receivedSize > kMinProgress) {
-                loading.progress = (float)receivedSize/expectedSize;
+                ///当点击大图，返回的时候不能执行下面的代码了。。。。
+//                    loading.progress = (float)receivedSize/expectedSize;
+                
             }
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
             [photoView photoDidFinishLoadWithImage:image];

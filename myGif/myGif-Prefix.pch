@@ -19,4 +19,5 @@
 #import "BaseViewController.h"
 #import "ViewControllerFactory.h"
 #import "UIImage+Line.h"
+#import "BuddyRefreshBaseView.h"
 #endif

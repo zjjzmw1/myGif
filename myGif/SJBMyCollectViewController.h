@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SJBMyCollectViewController : UICollectionViewController
-
+{
+  BuddyRefreshBaseView *_refreshView;
+}
 @property (nonatomic ,strong) NSMutableArray *resultArray;
-
 @end

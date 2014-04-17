@@ -52,6 +52,8 @@
 		181C5A9A18FF664400173F0F /* UIImage+Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A9918FF664400173F0F /* UIImage+Line.m */; };
 		181C5A9C18FF6BD200173F0F /* naviBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5A9B18FF6BD200173F0F /* naviBackground.png */; };
 		181C5AA018FF99EA00173F0F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5A9F18FF99EA00173F0F /* Icon.png */; };
+		181C5AA918FFB0B200173F0F /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5AA518FFB0B200173F0F /* arrow@2x.png */; };
+		181C5AAA18FFB0B200173F0F /* BuddyRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,10 @@
 		181C5A9918FF664400173F0F /* UIImage+Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Line.m"; sourceTree = "<group>"; };
 		181C5A9B18FF6BD200173F0F /* naviBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naviBackground.png; sourceTree = "<group>"; };
 		181C5A9F18FF99EA00173F0F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		181C5AA518FFB0B200173F0F /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		181C5AA618FFB0B200173F0F /* BuddyRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyRefreshBaseView.h; sourceTree = "<group>"; };
+		181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddyRefreshBaseView.m; sourceTree = "<group>"; };
+		181C5AA818FFB0B200173F0F /* BuddyRefreshMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyRefreshMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,7 @@
 				181C5A8918FF652A00173F0F /* SJBMyCollectViewController.h */,
 				181C5A8A18FF652A00173F0F /* SJBMyCollectViewController.m */,
 				181C5A9F18FF99EA00173F0F /* Icon.png */,
+				181C5AA418FFB0B200173F0F /* BuddyRefresh */,
 				181C5A8D18FF65A400173F0F /* base */,
 				181C5A1B18FF646D00173F0F /* Images.xcassets */,
 				181C5A1018FF646D00173F0F /* Supporting Files */,
@@ -345,6 +352,17 @@
 			name = base;
 			sourceTree = "<group>";
 		};
+		181C5AA418FFB0B200173F0F /* BuddyRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				181C5AA518FFB0B200173F0F /* arrow@2x.png */,
+				181C5AA618FFB0B200173F0F /* BuddyRefreshBaseView.h */,
+				181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */,
+				181C5AA818FFB0B200173F0F /* BuddyRefreshMacro.h */,
+			);
+			path = BuddyRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -423,6 +441,7 @@
 				181C5AA018FF99EA00173F0F /* Icon.png in Resources */,
 				181C5A1418FF646D00173F0F /* InfoPlist.strings in Resources */,
 				181C5A1C18FF646D00173F0F /* Images.xcassets in Resources */,
+				181C5AA918FFB0B200173F0F /* arrow@2x.png in Resources */,
 				181C5A9C18FF6BD200173F0F /* naviBackground.png in Resources */,
 				181C5A7318FF650600173F0F /* MJPhotoBrowser.bundle in Resources */,
 				181C5A7018FF650600173F0F /* MBProgressHUD.bundle in Resources */,
@@ -458,6 +477,7 @@
 				181C5A8318FF650600173F0F /* UIButton+WebCache.m in Sources */,
 				181C5A7C18FF650600173F0F /* SDWebImageCompat.m in Sources */,
 				181C5A7218FF650600173F0F /* MJPhoto.m in Sources */,
+				181C5AAA18FFB0B200173F0F /* BuddyRefreshBaseView.m in Sources */,
 				181C5A7D18FF650600173F0F /* SDWebImageDecoder.m in Sources */,
 				181C5A7F18FF650600173F0F /* SDWebImageDownloaderOperation.m in Sources */,
 				181C5A8818FF650600173F0F /* UIImageView+WebCache.m in Sources */,

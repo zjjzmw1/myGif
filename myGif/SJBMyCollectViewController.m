@@ -67,10 +67,77 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-20);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:MJCollectionViewCellIdentifier];
     
-    self.resultArray = [NSMutableArray arrayWithObjects:@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://ww3.sinaimg.cn/bmiddle/64112046jw1dzr87hevl1g.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",  nil];
+    self.resultArray = [NSMutableArray arrayWithObjects:@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-1452-1.jpg",@"http://www.30nan.com/uploads/userup/2/140109140647-2459-2.gif",  nil];
     
-
+    ///请求数据。
+    [self getBlogData];
+    ///刷新方法
+    [self refresh];
 }
+
+
+#pragma mark==========tableView的代理方法，和下拉刷新=================
+//下拉刷新
+- (void)getBlogData
+{
+     [self performSelector:@selector(doneWithView) withObject:nil afterDelay:0.5f];
+}
+///上提刷新。
+- (void)getBlogData2
+{
+    [self performSelector:@selector(doneWithView) withObject:nil afterDelay:0.5f];
+}
+
+- (void)refresh
+{
+    __unsafe_unretained SJBMyCollectViewController *vc = self;
+    
+    _refreshView = [[BuddyRefreshBaseView alloc]init];
+    _refreshView.scrollView = self.collectionView;
+    _refreshView.beginRefreshingBlock = ^(BuddyRefreshBaseView *refreshView) {
+        if (refreshView.viewType == BuddyRefreshTypeHeader) {
+            SJBLog(@"下拉刷新----");
+            [vc getBlogData];
+        }else{
+            SJBLog(@"上拉刷新");
+            [vc getBlogData2];
+        }
+        [vc performSelector:@selector(doneWithView) withObject:refreshView afterDelay:0.5f];
+        SJBLog(@"%@----开始进入刷新状态", refreshView.class);
+    };
+    _refreshView.endStateChangeBlock = ^(BuddyRefreshBaseView *refreshView) {
+        // 刷新完毕就会回调这个Block
+        SJBLog(@"%@----刷新完毕", refreshView.class);
+    };
+    _refreshView.refreshStateChangeBlock = ^(BuddyRefreshBaseView *refreshView, BuddyRefreshState state) {
+        // 控件的刷新状态切换了就会调用这个block
+        switch (state) {
+            case BuddyRefreshStateNormal:
+                SJBLog(@"%@----切换到：普通状态", refreshView.class);
+                break;
+                
+            case BuddyRefreshStatePulling:
+                SJBLog(@"%@----切换到：松开即可刷新的状态", refreshView.class);
+                break;
+                
+            case BuddyRefreshStateRefreshing:
+                SJBLog(@"%@----切换到：正在刷新状态", refreshView.class);
+                break;
+            default:
+                break;
+        }
+    };
+}
+///取消刷新的方法。
+- (void)doneWithView
+{
+    [self.collectionView reloadData];
+    [_refreshView endRefreshing];
+    
+}
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 }
@@ -83,8 +150,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MJCollectionViewCellIdentifier forIndexPath:indexPath];
-    //    cell.backgroundColor = _fakeColor[indexPath.row];
-    
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kImageWidth, kImageWidth)];
     imageView.image = [UIImage imageNamed:@"Icon"];
     // 下载图片
@@ -106,9 +171,9 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 - (void)tapImage:(UITapGestureRecognizer *)tap
 {
 
-     self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-20);
+     self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
     
-    int count = self.resultArray.count;
+    int count = (int)self.resultArray.count;
     // 1.封装图片数据
     NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
     for (int i = 0; i<count; i++) {
@@ -135,17 +200,32 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    SJBLog(@"内存警告。。。。。");
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark === 暂时不用清除缓存=====
+-(void)myClearCacheAction{
+    dispatch_async(
+                   dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                   , ^{
+                       NSString *cachPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+                       
+                       NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:cachPath];
+                       NSLog(@"files :%lu",(unsigned long)[files count]);
+                       for (NSString *p in files) {
+                           NSError *error;
+                           NSString *path = [cachPath stringByAppendingPathComponent:p];
+                           if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+                               [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+                           }
+                       }
+                       [self performSelectorOnMainThread:@selector(clearCacheSuccess) withObject:nil waitUntilDone:YES];});
+}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+-(void)clearCacheSuccess
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"清理成功");
 }
-*/
 
 @end

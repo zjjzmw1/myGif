@@ -132,14 +132,14 @@
     }
 }
 
-#pragma mark - MJPhotoView代理
+#pragma mark - MJPhotoView代理----------点击返回的时候，，，这时候清楚缓存。。。。。。
 - (void)photoViewSingleTap:(MJPhotoView *)photoView
 {
     [UIApplication sharedApplication].statusBarHidden = _statusBarHiddenInited;
     self.view.backgroundColor = [UIColor clearColor];
-    
     // 移除工具条
     [_toolbar removeFromSuperview];
+    
 }
 
 - (void)photoViewDidEndZoom:(MJPhotoView *)photoView
