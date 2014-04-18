@@ -32,7 +32,13 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     }
     return self;
 }
-
+- (void)onlineConfigCallBack:(NSNotification *)notification {
+    [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
+    [kUserDefault synchronize];
+    self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"gifList"]];
+    [self.collectionView reloadData];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UMOnlineConfigDidFinishedNotification object:nil];
+}
 -(void)baseNaviAction{
     Navbar *bar = (Navbar *)self.navigationController.navigationBar;
     //关键是这几句。。。。。
@@ -58,7 +64,7 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
     // 1.注册
