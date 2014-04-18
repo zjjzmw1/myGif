@@ -106,7 +106,6 @@
             if (receivedSize > kMinProgress) {
                 ///当点击大图，返回的时候不能执行下面的代码了。。。。
 //                    loading.progress = (float)receivedSize/expectedSize;
-                
             }
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
             [photoView photoDidFinishLoadWithImage:image];

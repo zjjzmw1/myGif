@@ -1,0 +1,13 @@
+PODS:
+  - SBJson (2.2.3)
+  - UMengAnalytics (2.2.1)
+
+DEPENDENCIES:
+  - SBJson (~> 2.2.3)
+  - UMengAnalytics (~> 2.2.1)
+
+SPEC CHECKSUMS:
+  SBJson: 853798c5de11f6c88d754d12cbe7ef413e1ec65e
+  UMengAnalytics: f4fd387a67f1ac6cef005d196ddd690c9515566d
+
+COCOAPODS: 0.32.1

@@ -19,5 +19,8 @@
 #import "BaseViewController.h"
 #import "ViewControllerFactory.h"
 #import "UIImage+Line.h"
-#import "BuddyRefreshBaseView.h"
+///友盟用的
+#import "MobClick.h"
+#import "SJBGeneralConfig.h"
+#import "JSON.h"
 #endif

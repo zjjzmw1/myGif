@@ -153,7 +153,7 @@
     _toolbar.currentPhotoIndex = _currentPhotoIndex;
 }
 
-#pragma mark 显示照片
+#pragma mark 显示照片，，，，本来显示图片的时候一次性加载所有的图片了，所以就崩溃了。。加载不超过10个应该没有问题。。。。。
 - (void)showPhotos
 {
     // 只有一张图片
@@ -184,15 +184,17 @@
     while (_reusablePhotoViews.count > 2) {
         [_reusablePhotoViews removeObject:[_reusablePhotoViews anyObject]];
     }
-	
 	for (NSUInteger index = firstIndex; index <= lastIndex; index++) {
 		if (![self isShowingPhotoViewAtIndex:index]) {
-			[self showPhotoViewAtIndex:index];
+            
+            if ((_currentPhotoIndex >= (index - 2) && _currentPhotoIndex <= (index + 2))||(_currentPhotoIndex < 3)) {
+                [self showPhotoViewAtIndex:index];
+            }
 		}
 	}
 }
 
-#pragma mark 显示一个图片view
+#pragma mark 显示一个个个个图片view
 - (void)showPhotoViewAtIndex:(int)index
 {
     MJPhotoView *photoView = [self dequeueReusablePhotoView];

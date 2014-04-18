@@ -52,8 +52,7 @@
 		181C5A9A18FF664400173F0F /* UIImage+Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A9918FF664400173F0F /* UIImage+Line.m */; };
 		181C5A9C18FF6BD200173F0F /* naviBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5A9B18FF6BD200173F0F /* naviBackground.png */; };
 		181C5AA018FF99EA00173F0F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5A9F18FF99EA00173F0F /* Icon.png */; };
-		181C5AA918FFB0B200173F0F /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181C5AA518FFB0B200173F0F /* arrow@2x.png */; };
-		181C5AAA18FFB0B200173F0F /* BuddyRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */; };
+		298949C86BC246928AF485A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF37C6DAB3DF41888C0E176C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,10 +146,9 @@
 		181C5A9918FF664400173F0F /* UIImage+Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Line.m"; sourceTree = "<group>"; };
 		181C5A9B18FF6BD200173F0F /* naviBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naviBackground.png; sourceTree = "<group>"; };
 		181C5A9F18FF99EA00173F0F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		181C5AA518FFB0B200173F0F /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
-		181C5AA618FFB0B200173F0F /* BuddyRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyRefreshBaseView.h; sourceTree = "<group>"; };
-		181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddyRefreshBaseView.m; sourceTree = "<group>"; };
-		181C5AA818FFB0B200173F0F /* BuddyRefreshMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyRefreshMacro.h; sourceTree = "<group>"; };
+		18EAE8271900BD4F00255212 /* SJBGeneralConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJBGeneralConfig.h; sourceTree = "<group>"; };
+		BDB9CCA3F4D943E6A7565CC1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FF37C6DAB3DF41888C0E176C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +159,7 @@
 				181C5A0C18FF646D00173F0F /* CoreGraphics.framework in Frameworks */,
 				181C5A0E18FF646D00173F0F /* UIKit.framework in Frameworks */,
 				181C5A0A18FF646D00173F0F /* Foundation.framework in Frameworks */,
+				298949C86BC246928AF485A4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +183,7 @@
 				181C5A2818FF646D00173F0F /* myGifTests */,
 				181C5A0818FF646D00173F0F /* Frameworks */,
 				181C5A0718FF646D00173F0F /* Products */,
+				BDB9CCA3F4D943E6A7565CC1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +203,7 @@
 				181C5A0B18FF646D00173F0F /* CoreGraphics.framework */,
 				181C5A0D18FF646D00173F0F /* UIKit.framework */,
 				181C5A2218FF646D00173F0F /* XCTest.framework */,
+				FF37C6DAB3DF41888C0E176C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 				181C5A8918FF652A00173F0F /* SJBMyCollectViewController.h */,
 				181C5A8A18FF652A00173F0F /* SJBMyCollectViewController.m */,
 				181C5A9F18FF99EA00173F0F /* Icon.png */,
-				181C5AA418FFB0B200173F0F /* BuddyRefresh */,
 				181C5A8D18FF65A400173F0F /* base */,
 				181C5A1B18FF646D00173F0F /* Images.xcassets */,
 				181C5A1018FF646D00173F0F /* Supporting Files */,
@@ -338,6 +338,7 @@
 		181C5A8D18FF65A400173F0F /* base */ = {
 			isa = PBXGroup;
 			children = (
+				18EAE8271900BD4F00255212 /* SJBGeneralConfig.h */,
 				181C5A9718FF65D600173F0F /* SJBDisplayConfig.h */,
 				181C5A8E18FF65BC00173F0F /* Navbar.h */,
 				181C5A8F18FF65BC00173F0F /* Navbar.m */,
@@ -352,17 +353,6 @@
 			name = base;
 			sourceTree = "<group>";
 		};
-		181C5AA418FFB0B200173F0F /* BuddyRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				181C5AA518FFB0B200173F0F /* arrow@2x.png */,
-				181C5AA618FFB0B200173F0F /* BuddyRefreshBaseView.h */,
-				181C5AA718FFB0B200173F0F /* BuddyRefreshBaseView.m */,
-				181C5AA818FFB0B200173F0F /* BuddyRefreshMacro.h */,
-			);
-			path = BuddyRefresh;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,9 +360,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 181C5A3218FF646D00173F0F /* Build configuration list for PBXNativeTarget "myGif" */;
 			buildPhases = (
+				49CBE1E1DF9F48CFAFE65FE0 /* Check Pods Manifest.lock */,
 				181C5A0218FF646D00173F0F /* Sources */,
 				181C5A0318FF646D00173F0F /* Frameworks */,
 				181C5A0418FF646D00173F0F /* Resources */,
+				450C51E159EC41DDA628A0A4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,7 +433,6 @@
 				181C5AA018FF99EA00173F0F /* Icon.png in Resources */,
 				181C5A1418FF646D00173F0F /* InfoPlist.strings in Resources */,
 				181C5A1C18FF646D00173F0F /* Images.xcassets in Resources */,
-				181C5AA918FFB0B200173F0F /* arrow@2x.png in Resources */,
 				181C5A9C18FF6BD200173F0F /* naviBackground.png in Resources */,
 				181C5A7318FF650600173F0F /* MJPhotoBrowser.bundle in Resources */,
 				181C5A7018FF650600173F0F /* MBProgressHUD.bundle in Resources */,
@@ -457,6 +448,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		450C51E159EC41DDA628A0A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49CBE1E1DF9F48CFAFE65FE0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		181C5A0218FF646D00173F0F /* Sources */ = {
@@ -477,7 +501,6 @@
 				181C5A8318FF650600173F0F /* UIButton+WebCache.m in Sources */,
 				181C5A7C18FF650600173F0F /* SDWebImageCompat.m in Sources */,
 				181C5A7218FF650600173F0F /* MJPhoto.m in Sources */,
-				181C5AAA18FFB0B200173F0F /* BuddyRefreshBaseView.m in Sources */,
 				181C5A7D18FF650600173F0F /* SDWebImageDecoder.m in Sources */,
 				181C5A7F18FF650600173F0F /* SDWebImageDownloaderOperation.m in Sources */,
 				181C5A8818FF650600173F0F /* UIImageView+WebCache.m in Sources */,
@@ -608,6 +631,7 @@
 		};
 		181C5A3318FF646D00173F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB9CCA3F4D943E6A7565CC1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -622,6 +646,7 @@
 		};
 		181C5A3418FF646D00173F0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB9CCA3F4D943E6A7565CC1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

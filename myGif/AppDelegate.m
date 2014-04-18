@@ -9,9 +9,21 @@
 #import "AppDelegate.h"
 #import "SJBMyCollectViewController.h"
 @implementation AppDelegate
+- (void)onlineConfigCallBack:(NSNotification *)notification {
+    [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
+    [kUserDefault synchronize];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UMOnlineConfigDidFinishedNotification object:nil];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MobClick startWithAppkey:kUMappKey];
+    
+    [MobClick updateOnlineConfig];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
