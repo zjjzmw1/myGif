@@ -7,7 +7,6 @@
 
 #import "MJPhotoView.h"
 #import "MJPhoto.h"
-#import "MJPhotoLoadingView.h"
 #import "UIImageView+WebCache.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -15,8 +14,6 @@
 {
     BOOL _doubleTap;
     UIImageView *_imageView;
-    MJPhotoLoadingView *_photoLoadingView;
-    
 }
 @end
 
@@ -31,9 +28,6 @@
 		_imageView.contentMode = UIViewContentModeScaleAspectFit;
 		[self addSubview:_imageView];
         
-        // 进度条
-        _photoLoadingView = [[MJPhotoLoadingView alloc] init];
-		
 		// 属性
 		self.backgroundColor = [UIColor clearColor];
 		self.delegate = self;
@@ -97,17 +91,14 @@
     } else {
         self.scrollEnabled = NO;
         // 直接显示进度条
-        [_photoLoadingView showLoading];
-        [self addSubview:_photoLoadingView];
-        
-        __unsafe_unretained MJPhotoView *photoView = self;
-        __unsafe_unretained MJPhotoLoadingView *loading = _photoLoadingView;
+        __block MJPhotoView *photoView = self;
         [_imageView setImageWithURL:_photo.url placeholderImage:_photo.srcImageView.image options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSUInteger receivedSize, long long expectedSize) {
-            if (receivedSize > kMinProgress) {
+            if (receivedSize > 0.001f) {
                 ///当点击大图，返回的时候不能执行下面的代码了。。。。
-//                    loading.progress = (float)receivedSize/expectedSize;
+                [SVProgressHUD showProgress:(float)receivedSize/expectedSize];
             }
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            [SVProgressHUD dismiss];
             [photoView photoDidFinishLoadWithImage:image];
         }];
     }
@@ -119,14 +110,11 @@
     if (image) {
         self.scrollEnabled = YES;
         _photo.image = image;
-        [_photoLoadingView removeFromSuperview];
-        
         if ([self.photoViewDelegate respondsToSelector:@selector(photoViewImageFinishLoad:)]) {
             [self.photoViewDelegate photoViewImageFinishLoad:self];
         }
     } else {
-        [self addSubview:_photoLoadingView];
-        [_photoLoadingView showFailure];
+        [SVProgressHUD dismiss];
     }
     
     // 设置缩放比例
@@ -188,20 +176,22 @@
 
 #pragma mark - UIScrollViewDelegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    [SVProgressHUD dismiss];
 	return _imageView;
 }
 
-#pragma mark - 手势处理
+#pragma mark - 手势处理----点击返回的方法。。。。
 - (void)handleSingleTap:(UITapGestureRecognizer *)tap {
     _doubleTap = NO;
+    [_imageView cancelCurrentImageLoad];
+    [SVProgressHUD dismiss];
     [self performSelector:@selector(hide) withObject:nil afterDelay:0.2];
 }
 - (void)hide
 {
     if (_doubleTap) return;
-    
     // 移除进度条
-    [_photoLoadingView removeFromSuperview];
+    [SVProgressHUD dismiss];
     self.contentOffset = CGPointZero;
     
     // 清空底部的小图
@@ -248,13 +238,14 @@
 	if (self.zoomScale == self.maximumZoomScale) {
 		[self setZoomScale:self.minimumZoomScale animated:YES];
 	} else {
-		[self zoomToRect:CGRectMake(touchPoint.x, touchPoint.y, 1, 1) animated:YES];
+		[self zoomToRect:CGRectMake(touchPoint.x, touchPoint.y, 2, 2) animated:YES];
 	}
 }
 
 - (void)dealloc
 {
     // 取消请求
+    [_imageView cancelCurrentImageLoad];
     [_imageView setImageWithURL:[NSURL URLWithString:@"file:///abc"]];
 }
 @end

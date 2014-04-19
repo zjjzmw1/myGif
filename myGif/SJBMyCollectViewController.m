@@ -11,8 +11,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 #import "UIImageView+MJWebCache.h"
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
-#define kImageWidth 104.0f
-#define kImageSpacing 2.0f
 @interface SJBMyCollectViewController ()
 
 @end
@@ -35,6 +33,9 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 - (void)onlineConfigCallBack:(NSNotification *)notification {
     [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
     [kUserDefault synchronize];
+    if ([[kUserDefault objectForKey:@"gifList"] count]<4) {///可能是第一次，并且没有网络。
+        return;
+    }
     self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"gifList"]];
     [self.collectionView reloadData];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UMOnlineConfigDidFinishedNotification object:nil];
@@ -67,15 +68,22 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
+    [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
     // 1.注册
     self.collectionView.backgroundColor = BACKGROUND_CORLOR;
     self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-20);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:MJCollectionViewCellIdentifier];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backReload) name:@"backReload" object:nil];
 }
-
-
+-(void)rightAction{
+    [self.collectionView reloadData];
+    self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+}
+-(void)backReload{
+    [self.collectionView reloadData];
+    self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -84,6 +92,7 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     }else{
         self.resultArray = [NSMutableArray arrayWithObjects:@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif", nil];
     }
+    [self.collectionView reloadData];
 }
 #pragma mark - collection数据源代理
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -120,7 +129,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
     for (int i = 0; i<count; i++) {
         // 替换为中等尺寸图片
-//        NSString *url = [self.resultArray[i] stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
         MJPhoto *photo = [[MJPhoto alloc] init];
         photo.url = [NSURL URLWithString:self.resultArray[i]]; // 图片路径
         photo.srcImageView = (UIImageView *)tap.view;
@@ -144,31 +152,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
     SJBLog(@"内存警告。。。。。");
     [self.collectionView reloadData];
-}
-
-#pragma mark === 暂时不用清除缓存=====
--(void)myClearCacheAction{
-    dispatch_async(
-                   dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-                   , ^{
-                       NSString *cachPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-                       
-                       NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:cachPath];
-                       NSLog(@"files :%lu",(unsigned long)[files count]);
-                       for (NSString *p in files) {
-                           NSError *error;
-                           NSString *path = [cachPath stringByAppendingPathComponent:p];
-                           if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                               [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
-                           }
-                       }
-                       [self performSelectorOnMainThread:@selector(clearCacheSuccess) withObject:nil waitUntilDone:YES];});
-}
-
-
--(void)clearCacheSuccess
-{
-    NSLog(@"清理成功");
 }
 
 @end

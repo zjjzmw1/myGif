@@ -1,13 +1,16 @@
 PODS:
   - SBJson (2.2.3)
+  - SVProgressHUD (1.0)
   - UMengAnalytics (2.2.1)
 
 DEPENDENCIES:
   - SBJson (~> 2.2.3)
+  - SVProgressHUD (~> 1.0)
   - UMengAnalytics (~> 2.2.1)
 
 SPEC CHECKSUMS:
   SBJson: 853798c5de11f6c88d754d12cbe7ef413e1ec65e
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   UMengAnalytics: f4fd387a67f1ac6cef005d196ddd690c9515566d
 
 COCOAPODS: 0.32.1

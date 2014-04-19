@@ -18,6 +18,10 @@
 #define APPBOUND [UIScreen mainScreen].applicationFrame
 #endif
 
+#define kImageWidth 104.0f
+#define kImageSpacing 2.0f
+
+
 #define kPreferedFontType                   @"HiraginoSansGB-W3"
 #define kPreferedFontBoldType               @"HiraginoSansGB-W6"
 #define kDefaultFontType                    @"HelveticaNeue-Light"

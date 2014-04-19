@@ -23,4 +23,5 @@
 #import "MobClick.h"
 #import "SJBGeneralConfig.h"
 #import "JSON.h"
+#import "SVProgressHUD.h"
 #endif

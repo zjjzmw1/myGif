@@ -25,7 +25,6 @@
 		181C5A7218FF650600173F0F /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4118FF650600173F0F /* MJPhoto.m */; };
 		181C5A7318FF650600173F0F /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 181C5A4218FF650600173F0F /* MJPhotoBrowser.bundle */; };
 		181C5A7418FF650600173F0F /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4418FF650600173F0F /* MJPhotoBrowser.m */; };
-		181C5A7518FF650600173F0F /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4618FF650600173F0F /* MJPhotoLoadingView.m */; };
 		181C5A7618FF650600173F0F /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4818FF650600173F0F /* MJPhotoProgressView.m */; };
 		181C5A7718FF650600173F0F /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4A18FF650600173F0F /* MJPhotoToolbar.m */; };
 		181C5A7818FF650600173F0F /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C5A4C18FF650600173F0F /* MJPhotoView.m */; };
@@ -92,8 +91,6 @@
 		181C5A4218FF650600173F0F /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
 		181C5A4318FF650600173F0F /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
 		181C5A4418FF650600173F0F /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
-		181C5A4518FF650600173F0F /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
-		181C5A4618FF650600173F0F /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
 		181C5A4718FF650600173F0F /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
 		181C5A4818FF650600173F0F /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
 		181C5A4918FF650600173F0F /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
@@ -283,8 +280,6 @@
 				181C5A4218FF650600173F0F /* MJPhotoBrowser.bundle */,
 				181C5A4318FF650600173F0F /* MJPhotoBrowser.h */,
 				181C5A4418FF650600173F0F /* MJPhotoBrowser.m */,
-				181C5A4518FF650600173F0F /* MJPhotoLoadingView.h */,
-				181C5A4618FF650600173F0F /* MJPhotoLoadingView.m */,
 				181C5A4718FF650600173F0F /* MJPhotoProgressView.h */,
 				181C5A4818FF650600173F0F /* MJPhotoProgressView.m */,
 				181C5A4918FF650600173F0F /* MJPhotoToolbar.h */,
@@ -512,7 +507,6 @@
 				181C5A6F18FF650600173F0F /* MBProgressHUD+Add.m in Sources */,
 				181C5A7A18FF650600173F0F /* NSData+GIF.m in Sources */,
 				181C5A1618FF646D00173F0F /* main.m in Sources */,
-				181C5A7518FF650600173F0F /* MJPhotoLoadingView.m in Sources */,
 				181C5A8618FF650600173F0F /* UIImage+WebP.m in Sources */,
 				181C5A8118FF650600173F0F /* SDWebImageManager.m in Sources */,
 				181C5A7B18FF650600173F0F /* SDImageCache.m in Sources */,

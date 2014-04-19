@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface SJBMyCollectViewController : UICollectionViewController
 
 @property (nonatomic ,strong) NSMutableArray *resultArray;
+
 @end
