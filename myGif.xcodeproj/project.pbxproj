@@ -22,7 +22,6 @@
 		18087DBE19050B83004408E9 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18087DBC19050B83004408E9 /* MoreViewController.xib */; };
 		18087DC119050CBD004408E9 /* LocalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DC019050CBD004408E9 /* LocalImageViewController.m */; };
 		18087DC4190527AF004408E9 /* GifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DC3190527AF004408E9 /* GifView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18087DC61905296F004408E9 /* run.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18087DC51905296F004408E9 /* run.gif */; };
 		181C5A0A18FF646D00173F0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0918FF646D00173F0F /* Foundation.framework */; };
 		181C5A0C18FF646D00173F0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0B18FF646D00173F0F /* CoreGraphics.framework */; };
 		181C5A0E18FF646D00173F0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0D18FF646D00173F0F /* UIKit.framework */; };
@@ -109,7 +108,6 @@
 		18087DC019050CBD004408E9 /* LocalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalImageViewController.m; sourceTree = "<group>"; };
 		18087DC2190527AF004408E9 /* GifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifView.h; sourceTree = "<group>"; };
 		18087DC3190527AF004408E9 /* GifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifView.m; sourceTree = "<group>"; };
-		18087DC51905296F004408E9 /* run.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = run.gif; sourceTree = "<group>"; };
 		181C5A0618FF646D00173F0F /* myGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181C5A0918FF646D00173F0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		181C5A0B18FF646D00173F0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -293,7 +291,6 @@
 				18087DC019050CBD004408E9 /* LocalImageViewController.m */,
 				18087DC2190527AF004408E9 /* GifView.h */,
 				18087DC3190527AF004408E9 /* GifView.m */,
-				18087DC51905296F004408E9 /* run.gif */,
 				181C5A9F18FF99EA00173F0F /* Icon.png */,
 				181C5A8D18FF65A400173F0F /* base */,
 				181C5A1B18FF646D00173F0F /* Images.xcassets */,
@@ -515,7 +512,6 @@
 				18087D9C1904FECB004408E9 /* AGViewController_iPhone.xib in Resources */,
 				181C5A7318FF650600173F0F /* MJPhotoBrowser.bundle in Resources */,
 				18087DBE19050B83004408E9 /* MoreViewController.xib in Resources */,
-				18087DC61905296F004408E9 /* run.gif in Resources */,
 				181C5A7018FF650600173F0F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

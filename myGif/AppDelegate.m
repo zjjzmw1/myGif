@@ -1,7 +1,15 @@
 //
 //  AppDelegate.m
 //  myGif
-//
+/////获取在后台上次的数据。
+//AVQuery *query = [AVQuery queryWithClassName:@"gifList"];
+//NSMutableArray *avosArray = [NSMutableArray array];
+//int count = (int)[[query findObjects]count];
+//for (int i =0; i<count; ++i) {
+//    [avosArray addObject:[[[query findObjects]objectAtIndex:i]objectForKey:@"url"]];
+//}
+//[kUserDefault setObject:avosArray forKey:@"avosArray"];
+//[kUserDefault synchronize];
 //  Created by Buddy on 17/4/14.
 //  Copyright (c) 2014 apple. All rights reserved.
 //
@@ -19,16 +27,15 @@
     
     ///获取在后台上次的数据。
     AVQuery *query = [AVQuery queryWithClassName:@"gifList"];
-    
     NSMutableArray *avosArray = [NSMutableArray array];
-    int count = [[query findObjects]count];
+    int count = (int)[[query findObjects]count];
     for (int i =0; i<count; ++i) {
         [avosArray addObject:[[[query findObjects]objectAtIndex:i]objectForKey:@"url"]];
     }
+    if (avosArray.count>0) {
     [kUserDefault setObject:avosArray forKey:@"avosArray"];
     [kUserDefault synchronize];
-    
-    
+    }
     
     [MobClick startWithAppkey:kUMappKey];
     [MobClick updateOnlineConfig];
@@ -65,6 +72,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    ///从后台回来的时候执行的。
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"becomeActive" object:nil];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

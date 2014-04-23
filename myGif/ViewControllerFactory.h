@@ -19,7 +19,7 @@
 +(void)telViewController:(id)viewController telNum:(NSString *)telNum;
 //拨打电话时候用的单例。
 + (ViewControllerFactory *)sharedManager;
-
++ (void)removeSubviews: (UIView *)superview;
 +(BOOL)saveFileToLoc:(NSString *) fileName theFile:(id) file;
 +(BOOL) getFileFromLoc:(NSString*)filePath into:(id)dic;
 

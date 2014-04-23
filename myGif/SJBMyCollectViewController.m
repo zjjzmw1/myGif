@@ -58,7 +58,7 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [super viewDidLoad];
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
-    [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
+//    [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain  target:self action:@selector(moreAction)];
     [self.navigationItem setLeftBarButtonItem:leftButton];
     
@@ -68,35 +68,32 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-20);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:MJCollectionViewCellIdentifier];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backReload) name:@"backReload" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(becomeActive) name:@"becomeActive" object:nil];
+    self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"avosArray"]];
+//    [self.collectionView reloadData];///刷新频繁容易引起崩溃。
 }
 -(void)moreAction{
     MoreViewController *moreVC = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
     [self.navigationController pushViewController:moreVC animated:YES];
 }
--(void)rightAction{
-    [self.collectionView reloadData];
-    if (isBackFlag == 1) {
-        self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
-    }else{
-        self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
-    }
-}
 
 
 -(void)backReload{
     isBackFlag = 1;
-    [self.collectionView reloadData];
     self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+}
+-(void)becomeActive{
+    self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"首页"];
-    if ([kUserDefault objectForKey:@"avosArray"]!=nil) {
-        self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"avosArray"]];
-    }else{
-        self.resultArray = [NSMutableArray arrayWithObjects:@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif", nil];
-    }
-    [self.collectionView reloadData];
+    SJBLog(@"willAppear");
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"首页"];
+    SJBLog(@"willDisAppear");
 }
 #pragma mark - collection数据源代理
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -149,16 +146,12 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     SJBLog(@"第%ld据",(long)indexPath.row);
 }
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"首页"];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     SJBLog(@"内存警告。。。。。");
-    [self.collectionView reloadData];
+    
 }
 
 @end

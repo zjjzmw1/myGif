@@ -19,6 +19,11 @@
     
     return img;
 }
++ (void)removeSubviews: (UIView *)superview{
+    for( UIView* view in superview.subviews ){
+        [view removeFromSuperview];
+    }
+}
 +(void)creatRequest:(NSString *)urlString paramDict:(NSMutableDictionary *)paramDict delegate:(id)delegate{
     //    NSLog(@"paramDict====%@",paramDict);
 //    ASIFormDataRequest *requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
