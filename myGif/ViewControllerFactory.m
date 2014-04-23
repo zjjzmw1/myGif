@@ -9,7 +9,16 @@
 #import "ViewControllerFactory.h"
 
 @implementation ViewControllerFactory
-
++ (UIImage *)fullResolutionImageFromALAsset:(ALAsset *)asset
+{
+    ALAssetRepresentation *assetRep = [asset defaultRepresentation];
+    CGImageRef imgRef = [assetRep fullResolutionImage];
+    UIImage *img = [UIImage imageWithCGImage:imgRef
+                                       scale:assetRep.scale
+                                 orientation:(UIImageOrientation)assetRep.orientation];
+    
+    return img;
+}
 +(void)creatRequest:(NSString *)urlString paramDict:(NSMutableDictionary *)paramDict delegate:(id)delegate{
     //    NSLog(@"paramDict====%@",paramDict);
 //    ASIFormDataRequest *requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];

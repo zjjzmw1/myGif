@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SJBMyCollectViewController.h"
+#import "AGViewController.h"
 @implementation AppDelegate
 - (void)onlineConfigCallBack:(NSNotification *)notification {
     [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
@@ -32,6 +33,9 @@
     SJBMyCollectViewController *myCollectVC = [[SJBMyCollectViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:myCollectVC];
     self.window.rootViewController = navi;
+
+//    AGViewController *agVC = [[AGViewController alloc] initWithNibName:@"AGViewController_iPhone" bundle:nil];
+//    self.window.rootViewController = agVC;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     

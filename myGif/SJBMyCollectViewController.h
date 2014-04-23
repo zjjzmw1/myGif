@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface SJBMyCollectViewController : UICollectionViewController
 
+@interface SJBMyCollectViewController : UICollectionViewController
+{
+    int isBackFlag;
+    UIWebView *_webView;
+}
 @property (nonatomic ,strong) NSMutableArray *resultArray;
 
 @end

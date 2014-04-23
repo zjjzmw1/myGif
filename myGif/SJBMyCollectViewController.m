@@ -7,6 +7,7 @@
 //
 NSString *const MJCollectionViewCellIdentifier = @"Cell";
 #import "SJBMyCollectViewController.h"
+#import "MoreViewController.h"
 
 #import "UIImageView+MJWebCache.h"
 #import "MJPhotoBrowser.h"
@@ -69,6 +70,9 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
     [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain  target:self action:@selector(moreAction)];
+    [self.navigationItem setLeftBarButtonItem:leftButton];
+    
     // 1.注册
     self.collectionView.backgroundColor = BACKGROUND_CORLOR;
     self.collectionView.alwaysBounceVertical = YES;
@@ -76,17 +80,42 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:MJCollectionViewCellIdentifier];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backReload) name:@"backReload" object:nil];
 }
--(void)rightAction{
-    [self.collectionView reloadData];
-    self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+-(void)moreAction{
+    MoreViewController *moreVC = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
+    [self.navigationController pushViewController:moreVC animated:YES];
 }
+-(void)rightAction{
+//    [self.collectionView reloadData];
+//    if (isBackFlag == 1) {
+//        self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+//    }else{
+//        self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
+//    }
+    
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:18631831822"]];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (TRUE)
+        {
+            if (!_webView) {
+                _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+            }
+            [_webView loadRequest:[NSURLRequest requestWithURL:url]];
+        }
+    
+    }
+    
+}
+
+
 -(void)backReload{
+    isBackFlag = 1;
     [self.collectionView reloadData];
     self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"首页"];
     if ([kUserDefault objectForKey:@"gifList"]!=nil) {
         self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"gifList"]];
     }else{
@@ -117,7 +146,7 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     imageView.clipsToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     
-    [cell addSubview:imageView];
+    [cell.contentView addSubview:imageView];
     
     return cell;
 }
@@ -145,7 +174,10 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     SJBLog(@"第%ld据",(long)indexPath.row);
 }
-
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"首页"];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

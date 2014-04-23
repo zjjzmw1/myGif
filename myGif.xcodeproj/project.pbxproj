@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18087D9B1904FECB004408E9 /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087D981904FECB004408E9 /* AGViewController.m */; };
+		18087D9C1904FECB004408E9 /* AGViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18087D991904FECB004408E9 /* AGViewController_iPhone.xib */; };
+		18087DB119050222004408E9 /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DA019050222004408E9 /* AGImagePickerController+Helper.m */; };
+		18087DB219050222004408E9 /* AGImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18087DA119050222004408E9 /* AGImagePickerController.bundle */; };
+		18087DB319050222004408E9 /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DA319050222004408E9 /* AGImagePickerController.m */; };
+		18087DB419050222004408E9 /* AGIPCAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DA619050222004408E9 /* AGIPCAlbumsController.m */; };
+		18087DB519050222004408E9 /* AGIPCAssetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DA819050222004408E9 /* AGIPCAssetsController.m */; };
+		18087DB619050222004408E9 /* AGIPCGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DAA19050222004408E9 /* AGIPCGridCell.m */; };
+		18087DB719050222004408E9 /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DAC19050222004408E9 /* AGIPCGridItem.m */; };
+		18087DB819050222004408E9 /* AGIPCToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DAE19050222004408E9 /* AGIPCToolbarItem.m */; };
+		18087DB919050222004408E9 /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DB019050222004408E9 /* ALAsset+AGIPC.m */; };
+		18087DBD19050B83004408E9 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DBB19050B83004408E9 /* MoreViewController.m */; };
+		18087DBE19050B83004408E9 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18087DBC19050B83004408E9 /* MoreViewController.xib */; };
+		18087DC119050CBD004408E9 /* LocalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DC019050CBD004408E9 /* LocalImageViewController.m */; };
+		18087DC4190527AF004408E9 /* GifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18087DC3190527AF004408E9 /* GifView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18087DC61905296F004408E9 /* run.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18087DC51905296F004408E9 /* run.gif */; };
 		181C5A0A18FF646D00173F0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0918FF646D00173F0F /* Foundation.framework */; };
 		181C5A0C18FF646D00173F0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0B18FF646D00173F0F /* CoreGraphics.framework */; };
 		181C5A0E18FF646D00173F0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C5A0D18FF646D00173F0F /* UIKit.framework */; };
@@ -65,6 +81,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18087D971904FECB004408E9 /* AGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGViewController.h; sourceTree = "<group>"; };
+		18087D981904FECB004408E9 /* AGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGViewController.m; sourceTree = "<group>"; };
+		18087D991904FECB004408E9 /* AGViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGViewController_iPhone.xib; sourceTree = "<group>"; };
+		18087D9F19050222004408E9 /* AGImagePickerController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AGImagePickerController+Helper.h"; sourceTree = "<group>"; };
+		18087DA019050222004408E9 /* AGImagePickerController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AGImagePickerController+Helper.m"; sourceTree = "<group>"; };
+		18087DA119050222004408E9 /* AGImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AGImagePickerController.bundle; sourceTree = "<group>"; };
+		18087DA219050222004408E9 /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerController.h; sourceTree = "<group>"; };
+		18087DA319050222004408E9 /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGImagePickerController.m; sourceTree = "<group>"; };
+		18087DA419050222004408E9 /* AGImagePickerControllerDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerControllerDefines.h; sourceTree = "<group>"; };
+		18087DA519050222004408E9 /* AGIPCAlbumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAlbumsController.h; sourceTree = "<group>"; };
+		18087DA619050222004408E9 /* AGIPCAlbumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAlbumsController.m; sourceTree = "<group>"; };
+		18087DA719050222004408E9 /* AGIPCAssetsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAssetsController.h; sourceTree = "<group>"; };
+		18087DA819050222004408E9 /* AGIPCAssetsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAssetsController.m; sourceTree = "<group>"; };
+		18087DA919050222004408E9 /* AGIPCGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridCell.h; sourceTree = "<group>"; };
+		18087DAA19050222004408E9 /* AGIPCGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridCell.m; sourceTree = "<group>"; };
+		18087DAB19050222004408E9 /* AGIPCGridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridItem.h; sourceTree = "<group>"; };
+		18087DAC19050222004408E9 /* AGIPCGridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridItem.m; sourceTree = "<group>"; };
+		18087DAD19050222004408E9 /* AGIPCToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCToolbarItem.h; sourceTree = "<group>"; };
+		18087DAE19050222004408E9 /* AGIPCToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCToolbarItem.m; sourceTree = "<group>"; };
+		18087DAF19050222004408E9 /* ALAsset+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+AGIPC.h"; sourceTree = "<group>"; };
+		18087DB019050222004408E9 /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
+		18087DBA19050B83004408E9 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		18087DBB19050B83004408E9 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		18087DBC19050B83004408E9 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		18087DBF19050CBD004408E9 /* LocalImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalImageViewController.h; sourceTree = "<group>"; };
+		18087DC019050CBD004408E9 /* LocalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalImageViewController.m; sourceTree = "<group>"; };
+		18087DC2190527AF004408E9 /* GifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifView.h; sourceTree = "<group>"; };
+		18087DC3190527AF004408E9 /* GifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifView.m; sourceTree = "<group>"; };
+		18087DC51905296F004408E9 /* run.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = run.gif; sourceTree = "<group>"; };
 		181C5A0618FF646D00173F0F /* myGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181C5A0918FF646D00173F0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		181C5A0B18FF646D00173F0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +218,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18087D9E19050222004408E9 /* AGImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				18087D9F19050222004408E9 /* AGImagePickerController+Helper.h */,
+				18087DA019050222004408E9 /* AGImagePickerController+Helper.m */,
+				18087DA119050222004408E9 /* AGImagePickerController.bundle */,
+				18087DA219050222004408E9 /* AGImagePickerController.h */,
+				18087DA319050222004408E9 /* AGImagePickerController.m */,
+				18087DA419050222004408E9 /* AGImagePickerControllerDefines.h */,
+				18087DA519050222004408E9 /* AGIPCAlbumsController.h */,
+				18087DA619050222004408E9 /* AGIPCAlbumsController.m */,
+				18087DA719050222004408E9 /* AGIPCAssetsController.h */,
+				18087DA819050222004408E9 /* AGIPCAssetsController.m */,
+				18087DA919050222004408E9 /* AGIPCGridCell.h */,
+				18087DAA19050222004408E9 /* AGIPCGridCell.m */,
+				18087DAB19050222004408E9 /* AGIPCGridItem.h */,
+				18087DAC19050222004408E9 /* AGIPCGridItem.m */,
+				18087DAD19050222004408E9 /* AGIPCToolbarItem.h */,
+				18087DAE19050222004408E9 /* AGIPCToolbarItem.m */,
+				18087DAF19050222004408E9 /* ALAsset+AGIPC.h */,
+				18087DB019050222004408E9 /* ALAsset+AGIPC.m */,
+			);
+			path = AGImagePickerController;
+			sourceTree = "<group>";
+		};
 		181C59FD18FF646D00173F0F = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +283,17 @@
 				181C5A1918FF646D00173F0F /* AppDelegate.m */,
 				181C5A8918FF652A00173F0F /* SJBMyCollectViewController.h */,
 				181C5A8A18FF652A00173F0F /* SJBMyCollectViewController.m */,
+				18087DBA19050B83004408E9 /* MoreViewController.h */,
+				18087DBB19050B83004408E9 /* MoreViewController.m */,
+				18087DBC19050B83004408E9 /* MoreViewController.xib */,
+				18087D971904FECB004408E9 /* AGViewController.h */,
+				18087D981904FECB004408E9 /* AGViewController.m */,
+				18087D991904FECB004408E9 /* AGViewController_iPhone.xib */,
+				18087DBF19050CBD004408E9 /* LocalImageViewController.h */,
+				18087DC019050CBD004408E9 /* LocalImageViewController.m */,
+				18087DC2190527AF004408E9 /* GifView.h */,
+				18087DC3190527AF004408E9 /* GifView.m */,
+				18087DC51905296F004408E9 /* run.gif */,
 				181C5A9F18FF99EA00173F0F /* Icon.png */,
 				181C5A8D18FF65A400173F0F /* base */,
 				181C5A1B18FF646D00173F0F /* Images.xcassets */,
@@ -253,6 +334,7 @@
 		181C5A3818FF650600173F0F /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				18087D9E19050222004408E9 /* AGImagePickerController */,
 				181C5A3918FF650600173F0F /* MBProgressHUD */,
 				181C5A3F18FF650600173F0F /* MJPhotoBrowser */,
 				181C5A4D18FF650600173F0F /* SDWebImage */,
@@ -428,8 +510,12 @@
 				181C5AA018FF99EA00173F0F /* Icon.png in Resources */,
 				181C5A1418FF646D00173F0F /* InfoPlist.strings in Resources */,
 				181C5A1C18FF646D00173F0F /* Images.xcassets in Resources */,
+				18087DB219050222004408E9 /* AGImagePickerController.bundle in Resources */,
 				181C5A9C18FF6BD200173F0F /* naviBackground.png in Resources */,
+				18087D9C1904FECB004408E9 /* AGViewController_iPhone.xib in Resources */,
 				181C5A7318FF650600173F0F /* MJPhotoBrowser.bundle in Resources */,
+				18087DBE19050B83004408E9 /* MoreViewController.xib in Resources */,
+				18087DC61905296F004408E9 /* run.gif in Resources */,
 				181C5A7018FF650600173F0F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,11 +568,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18087DB419050222004408E9 /* AGIPCAlbumsController.m in Sources */,
 				181C5A8418FF650600173F0F /* UIImage+GIF.m in Sources */,
+				18087DB519050222004408E9 /* AGIPCAssetsController.m in Sources */,
 				181C5A7818FF650600173F0F /* MJPhotoView.m in Sources */,
+				18087D9B1904FECB004408E9 /* AGViewController.m in Sources */,
 				181C5A8218FF650600173F0F /* SDWebImagePrefetcher.m in Sources */,
 				181C5A7918FF650600173F0F /* MKAnnotationView+WebCache.m in Sources */,
 				181C5A8018FF650600173F0F /* SDWebImageManager+MJ.m in Sources */,
+				18087DB119050222004408E9 /* AGImagePickerController+Helper.m in Sources */,
+				18087DBD19050B83004408E9 /* MoreViewController.m in Sources */,
+				18087DC119050CBD004408E9 /* LocalImageViewController.m in Sources */,
 				181C5A9618FF65CC00173F0F /* ViewControllerFactory.m in Sources */,
 				181C5A9318FF65C700173F0F /* BaseViewController.m in Sources */,
 				181C5A7718FF650600173F0F /* MJPhotoToolbar.m in Sources */,
@@ -494,24 +586,30 @@
 				181C5A7618FF650600173F0F /* MJPhotoProgressView.m in Sources */,
 				181C5A8718FF650600173F0F /* UIImageView+MJWebCache.m in Sources */,
 				181C5A8318FF650600173F0F /* UIButton+WebCache.m in Sources */,
+				18087DB619050222004408E9 /* AGIPCGridCell.m in Sources */,
 				181C5A7C18FF650600173F0F /* SDWebImageCompat.m in Sources */,
 				181C5A7218FF650600173F0F /* MJPhoto.m in Sources */,
+				18087DB919050222004408E9 /* ALAsset+AGIPC.m in Sources */,
 				181C5A7D18FF650600173F0F /* SDWebImageDecoder.m in Sources */,
 				181C5A7F18FF650600173F0F /* SDWebImageDownloaderOperation.m in Sources */,
 				181C5A8818FF650600173F0F /* UIImageView+WebCache.m in Sources */,
 				181C5A8518FF650600173F0F /* UIImage+MultiFormat.m in Sources */,
 				181C5A7E18FF650600173F0F /* SDWebImageDownloader.m in Sources */,
 				181C5A9A18FF664400173F0F /* UIImage+Line.m in Sources */,
+				18087DB819050222004408E9 /* AGIPCToolbarItem.m in Sources */,
 				181C5A9018FF65BC00173F0F /* Navbar.m in Sources */,
 				181C5A8B18FF652A00173F0F /* SJBMyCollectViewController.m in Sources */,
 				181C5A6F18FF650600173F0F /* MBProgressHUD+Add.m in Sources */,
+				18087DB719050222004408E9 /* AGIPCGridItem.m in Sources */,
 				181C5A7A18FF650600173F0F /* NSData+GIF.m in Sources */,
 				181C5A1618FF646D00173F0F /* main.m in Sources */,
 				181C5A8618FF650600173F0F /* UIImage+WebP.m in Sources */,
 				181C5A8118FF650600173F0F /* SDWebImageManager.m in Sources */,
+				18087DB319050222004408E9 /* AGImagePickerController.m in Sources */,
 				181C5A7B18FF650600173F0F /* SDImageCache.m in Sources */,
 				181C5A7418FF650600173F0F /* MJPhotoBrowser.m in Sources */,
 				181C5A7118FF650600173F0F /* MBProgressHUD.m in Sources */,
+				18087DC4190527AF004408E9 /* GifView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

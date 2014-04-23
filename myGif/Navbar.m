@@ -114,6 +114,7 @@
 {
     NavBarButtonItem *item = [[NavBarButtonItem alloc]initWithType:NavBarButtonItemTypeDefault];
     item.title = title;
+    item.font = [UIFont fontWithName:@"Arial" size:16];
     [item setTarget:target withAction:action];
     return item;
 }

@@ -80,6 +80,33 @@ static char operationArrayKey;
     }
 }
 
+-(void)showGifImage:(UIImage *)image{
+//    __weak UIImageView *wself = self;
+    self.image = image;
+    [self setNeedsLayout];
+    
+//    id<SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished)
+//                                         {
+//                                             if (!wself) return;
+//                                             dispatch_main_sync_safe(^
+//                                                                     {
+//                                                                         __strong UIImageView *sself = wself;
+//                                                                         if (!sself) return;
+//                                                                         if (image)
+//                                                                         {
+//                                                                             sself.image = image;
+//                                                                             [sself setNeedsLayout];
+//                                                                         }
+//                                                                         if (completedBlock && finished)
+//                                                                         {
+//                                                                             completedBlock(image, error, cacheType);
+//                                                                         }
+//                                                                     });
+//                                         } dealed:dealedBlock];
+//    objc_setAssociatedObject(self, &operationKey, operation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+}
+
 - (void)setAnimationImagesWithURLs:(NSArray *)arrayOfURLs
 {
     [self cancelCurrentArrayLoad];

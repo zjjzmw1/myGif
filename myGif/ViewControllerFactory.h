@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface ViewControllerFactory : NSObject
 
++ (UIImage *)fullResolutionImageFromALAsset:(ALAsset *)asset;
 //本来是网络的。
 +(void)creatRequest:(NSString *)urlString paramDict:(NSMutableDictionary *)paramDict delegate:(id)delegate;
 

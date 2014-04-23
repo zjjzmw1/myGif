@@ -150,4 +150,5 @@
 
 - (void)cancelCurrentArrayLoad;
 
+-(void)showGifImage:(UIImage *)image;
 @end
