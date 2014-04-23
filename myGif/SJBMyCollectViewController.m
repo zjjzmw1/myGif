@@ -31,16 +31,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     }
     return self;
 }
-- (void)onlineConfigCallBack:(NSNotification *)notification {
-    [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
-    [kUserDefault synchronize];
-    if ([[kUserDefault objectForKey:@"gifList"] count]<4) {///可能是第一次，并且没有网络。
-        return;
-    }
-    self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"gifList"]];
-    [self.collectionView reloadData];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UMOnlineConfigDidFinishedNotification object:nil];
-}
 -(void)baseNaviAction{
     Navbar *bar = (Navbar *)self.navigationController.navigationBar;
     //关键是这几句。。。。。
@@ -66,7 +56,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
     [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
@@ -85,26 +74,12 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [self.navigationController pushViewController:moreVC animated:YES];
 }
 -(void)rightAction{
-//    [self.collectionView reloadData];
-//    if (isBackFlag == 1) {
-//        self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
-//    }else{
-//        self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
-//    }
-    
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:18631831822"]];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        if (TRUE)
-        {
-            if (!_webView) {
-                _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
-            }
-            [_webView loadRequest:[NSURLRequest requestWithURL:url]];
-        }
-    
+    [self.collectionView reloadData];
+    if (isBackFlag == 1) {
+        self.collectionView.frame = CGRectMake(0, 20, kScreenWidth, kScreenHeight-64);
+    }else{
+        self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
     }
-    
 }
 
 
@@ -116,8 +91,8 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"首页"];
-    if ([kUserDefault objectForKey:@"gifList"]!=nil) {
-        self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"gifList"]];
+    if ([kUserDefault objectForKey:@"avosArray"]!=nil) {
+        self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"avosArray"]];
     }else{
         self.resultArray = [NSMutableArray arrayWithObjects:@"http://0d58aa18bdd2f2c4.qusu.org/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_2014421749050.gif?qsv=14&web_real_domain=www.asqql.com",@"http://gaoxiaotu.cn/uploads/allimg/140414/1-140414213045.gif",@"http://www.30nan.com/uploads/userup/2/140109140647-35b-0.gif", nil];
     }

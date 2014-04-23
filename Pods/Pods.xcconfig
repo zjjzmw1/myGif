@@ -1,6 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/AVOSCloud/iOS/release-v2.4.1"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/SBJson" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/UMengAnalytics"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AVOSCloud" "${PODS_ROOT}/Headers/SBJson" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/UMengAnalytics"
 LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/UMengAnalytics/**"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/SBJson" -isystem "${PODS_ROOT}/Headers/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/UMengAnalytics"
-OTHER_LDFLAGS = -ObjC -lMobClickLibrary -lz -framework QuartzCore
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/AVOSCloud" -isystem "${PODS_ROOT}/Headers/SBJson" -isystem "${PODS_ROOT}/Headers/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/UMengAnalytics"
+OTHER_LDFLAGS = -ObjC -lMobClickLibrary -lz -framework AVOSCloud -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreTelephony -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration
 PODS_ROOT = ${SRCROOT}/Pods

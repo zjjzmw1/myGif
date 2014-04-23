@@ -10,20 +10,28 @@
 #import "SJBMyCollectViewController.h"
 #import "AGViewController.h"
 @implementation AppDelegate
-- (void)onlineConfigCallBack:(NSNotification *)notification {
-    [kUserDefault setObject:[[MobClick getConfigParams:@"gifList"]JSONValue] forKey:@"gifList"];
-    [kUserDefault synchronize];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UMOnlineConfigDidFinishedNotification object:nil];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [AVOSCloud setApplicationId:kAVOSId clientKey:kAVOSKey];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];///跟踪应用的打开情况。
+    
+    ///获取在后台上次的数据。
+    AVQuery *query = [AVQuery queryWithClassName:@"gifList"];
+    
+    NSMutableArray *avosArray = [NSMutableArray array];
+    int count = [[query findObjects]count];
+    for (int i =0; i<count; ++i) {
+        [avosArray addObject:[[[query findObjects]objectAtIndex:i]objectForKey:@"url"]];
+    }
+    [kUserDefault setObject:avosArray forKey:@"avosArray"];
+    [kUserDefault synchronize];
+    
+    
+    
     [MobClick startWithAppkey:kUMappKey];
-    
     [MobClick updateOnlineConfig];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
-    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -33,10 +41,6 @@
     SJBMyCollectViewController *myCollectVC = [[SJBMyCollectViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:myCollectVC];
     self.window.rootViewController = navi;
-
-//    AGViewController *agVC = [[AGViewController alloc] initWithNibName:@"AGViewController_iPhone" bundle:nil];
-//    self.window.rootViewController = agVC;
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     
     return YES;

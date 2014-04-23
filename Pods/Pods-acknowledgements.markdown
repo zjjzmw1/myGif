@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AVOSCloud
+
+© Copyright 2013 AVOS Systems, Inc. See https://cn.avoscloud.com/terms.html
+
 ## SVProgressHUD
 
 Copyright (c) 2011 Sam Vermette

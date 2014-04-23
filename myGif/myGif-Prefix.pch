@@ -24,4 +24,6 @@
 #import "SJBGeneralConfig.h"
 #import "JSON.h"
 #import "SVProgressHUD.h"
+
+#import <AVOSCloud/AVOSCloud.h>
 #endif
