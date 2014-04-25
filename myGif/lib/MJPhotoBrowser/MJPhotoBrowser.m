@@ -139,7 +139,6 @@
     self.view.backgroundColor = [UIColor clearColor];
     // 移除工具条
     [_toolbar removeFromSuperview];
-//    [photoView.imageView removeFromSuperview];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"backReload" object:nil];
     
 }

@@ -58,7 +58,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [super viewDidLoad];
     [self baseNaviAction];
     [self.navigationItem setNewTitle:@"动态相册"];
-//    [self.navigationItem setRightItemWithTarget:self action:@selector(rightAction) title:@"刷新"];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain  target:self action:@selector(moreAction)];
     [self.navigationItem setLeftBarButtonItem:leftButton];
     
@@ -70,13 +69,11 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backReload) name:@"backReload" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(becomeActive) name:@"becomeActive" object:nil];
     self.resultArray = [NSMutableArray arrayWithArray:[kUserDefault objectForKey:@"avosArray"]];
-//    [self.collectionView reloadData];///刷新频繁容易引起崩溃。
 }
 -(void)moreAction{
     MoreViewController *moreVC = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
     [self.navigationController pushViewController:moreVC animated:YES];
 }
-
 
 -(void)backReload{
     isBackFlag = 1;
@@ -89,7 +86,19 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"首页"];
     SJBLog(@"willAppear");
+    
+    ///获取在后台的Default数据。
+    AVQuery *query = [AVQuery queryWithClassName:@"gifDefault"];
+    NSData *tempData = [NSData dataWithData:[[[[query findObjects]objectAtIndex:0]objectForKey:@"image"] getData]];
+    NSMutableDictionary *tempDict = [NSMutableDictionary dictionaryWithObject:tempData forKey:@"gifDefault"];
+    if (tempData!=nil) {
+        [ViewControllerFactory saveFileToLoc:@"gifDefault" theFile:tempDict];
+    }
 }
+
+
+
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"首页"];
@@ -105,9 +114,8 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MJCollectionViewCellIdentifier forIndexPath:indexPath];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kImageWidth, kImageWidth)];
-    imageView.image = [UIImage imageNamed:@"Icon"];
     // 下载图片
-    [imageView setImageURLStr:[self.resultArray objectAtIndex:indexPath.row] placeholder:imageView.image];
+    [imageView setImageURLStr:[self.resultArray objectAtIndex:indexPath.row] placeholder:kImageNamed(@"loading")];
     
     // 事件监听
     imageView.tag = indexPath.row;

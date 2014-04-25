@@ -18,13 +18,34 @@
 #import "SJBMyCollectViewController.h"
 #import "AGViewController.h"
 @implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    ///添加动态的启动页面.
+    _tempImageV = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
+    if ([ViewControllerFactory getFileFromLoc:@"gifDefault" into:tempDict]) {
+        _tempImageV.image = [UIImage imageWithData:[tempDict objectForKey:@"gifDefault"]];
+    }else{
+        _tempImageV.image = [UIImage imageNamed:@"Default2"];
+    }
+    [self.window addSubview:_tempImageV];
+    [self performSelector:@selector(removeTempImageView) withObject:nil afterDelay:0.0f];
     
     [AVOSCloud setApplicationId:kAVOSId clientKey:kAVOSKey];
-    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];///跟踪应用的打开情况。
-    
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];///跟踪应用的打开情况
+
+    return YES;
+}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+        return YES;
+}
+
+-(void)removeTempImageView{
     ///获取在后台上次的数据。
     AVQuery *query = [AVQuery queryWithClassName:@"gifList"];
     NSMutableArray *avosArray = [NSMutableArray array];
@@ -33,24 +54,18 @@
         [avosArray addObject:[[[query findObjects]objectAtIndex:i]objectForKey:@"url"]];
     }
     if (avosArray.count>0) {
-    [kUserDefault setObject:avosArray forKey:@"avosArray"];
-    [kUserDefault synchronize];
+        [kUserDefault setObject:avosArray forKey:@"avosArray"];
+        [kUserDefault synchronize];
     }
-    
     [MobClick startWithAppkey:kUMappKey];
     [MobClick updateOnlineConfig];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+
+    [_tempImageV removeFromSuperview];
     
     SJBMyCollectViewController *myCollectVC = [[SJBMyCollectViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:myCollectVC];
     self.window.rootViewController = navi;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

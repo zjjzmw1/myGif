@@ -151,12 +151,7 @@ NSString *const MyLocalImageCell = @"Cell";
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MyLocalImageCell forIndexPath:indexPath];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kImageWidth, kImageWidth)];
-//    imageView.image = [UIImage imageNamed:@"Icon"];
-    // 下载图片
-//    [imageView setImageURLStr:[self.resultArray objectAtIndex:indexPath.row] placeholder:imageView.image];
-//    imageView.image = [ViewControllerFactory fullResolutionImageFromALAsset:[self.resultArray objectAtIndex:indexPath.row]];
     [imageView showGifImage:[ViewControllerFactory fullResolutionImageFromALAsset:[self.resultArray objectAtIndex:indexPath.row]]];
-    SJBLog(@"===image ==== %@",[ViewControllerFactory fullResolutionImageFromALAsset:[self.resultArray objectAtIndex:indexPath.row]]);
     // 事件监听
     imageView.tag = indexPath.row;
     imageView.userInteractionEnabled = YES;
@@ -168,12 +163,9 @@ NSString *const MyLocalImageCell = @"Cell";
     
     
     NSData *localData = UIImageJPEGRepresentation([ViewControllerFactory fullResolutionImageFromALAsset:[self.resultArray objectAtIndex:indexPath.row]], 1.0f);
-//    NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"run" ofType:@"gif"]];
     
     GifView *dataView = [[GifView alloc] initWithFrame:CGRectMake(0, 0, kImageWidth, kImageWidth) data:localData];
-    
-//    [self.view addSubview:dataView];
-    
+        
     [cell.contentView addSubview:dataView];
     
     return cell;
