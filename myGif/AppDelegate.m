@@ -59,7 +59,8 @@
     }
     [MobClick startWithAppkey:kUMappKey];
     [MobClick updateOnlineConfig];
-
+    
+    
     [_tempImageV removeFromSuperview];
     
     SJBMyCollectViewController *myCollectVC = [[SJBMyCollectViewController alloc]init];
